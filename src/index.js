@@ -1,7 +1,9 @@
 const data = [undefined, 2, 3, 4, 5, 'sd'];
 
-function getArguments(a, b, ...c) {
-    if (data.length < 5) {
+function getArguments(...data) {
+    if (data.length < 3)
+    throw new Error();
+    else if (data.length < 5) {
         console.log('Error');
     }
     else if (data[0] === undefined) {
@@ -23,4 +25,4 @@ function getArguments(a, b, ...c) {
 
     return data;
 }
-getArguments(data);
+getArguments(...data);
